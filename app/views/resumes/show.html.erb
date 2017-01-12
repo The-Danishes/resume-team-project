@@ -3,33 +3,33 @@
   First name: <%= @student.first_name %>
   Last name: <%= @student.last_name %>
   Email: <%= @student.email %>
-  Phone: <%= @student.phone %>
+  Phone: <%= @student.phone_number %>
   Bio: <%= @student.bio %>
-  Linkedin: <%= @student.linkedin %>
-  Twitter: <%= @student.twitter %>
-  Personal: <%= @student.personal %>
-  Resume: <%= @student.resume %>
-  Github: <%= @student.github %>
+  Linkedin: <%= @student.linkedin_url %>
+  Twitter: <%= @student.twitter_handle %>
+  Personal: <%= @student.personal_url %>
+  Resume: <%= @student.resume_url %>
+  Github: <%= @student.github_url %>
   Photo: <%= @student.photo %>
  </div> %>
 
  <% @student.experiences.each do |experience| %>
   <div class="experience">
-    Start Date: <%= experience.start %>
-    End Date: <%= experience.end %>
-    Title: <%= experience.title %>
-    Company: <%= experience.company %>
+    Start Date: <%= experience.start_date %>
+    End Date: <%= experience.end_date %>
+    Title: <%= experience.job_title %>
+    Company: <%= experience.company_name %>
     Details: <%= experience.details %>
     </div>
     <% end %>
 
-    <% @student.education.each do |school| %>
+    <% @student.educations.each do |education| %>
     <div class="education">
-    Start Date: <%= school.start %>
-    End Date: <%= school.end %>
-    Degree: <%= school.degree %>
-    University: <%= school.university %>
-    Details: <%= school.details %>
+    Start Date: <%= education.start_date %>
+    End Date: <%= education.end_date %>
+    Degree: <%= education.degree %>
+    University: <%= education.university_name %>
+    Details: <%= education.details %>
     </div>
     <% end %>
 
@@ -43,7 +43,7 @@
     <div class="capstone" >
     Capstone: <% capstone.name %>
     Description: <% capstone.description %>
-    URL: <% capstone.url %>
+    URL: <% capstone.URL %>
     Screenshot: <% capstone.screenshot %>
     </div>
     <% end %>
