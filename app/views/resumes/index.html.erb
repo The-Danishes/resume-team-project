@@ -31,6 +31,21 @@
     </div>
     <% end %>
 
+    <div class="skills" >
+    <% @student.skills.each do |skill|%>
+    Skill Name <% skill.skill_name %>
+    <% end %>
+    </div>
+
+    <div class="capstone">
+    <% @student.capstones.each do |capstone|%>
+    <% capstone.name %>
+    <% capstone.description %>
+    <% capstone.url %>
+    <% capstone.screenshot %>
+    <% end %>
+    </div>
+
 
 
   </div>
