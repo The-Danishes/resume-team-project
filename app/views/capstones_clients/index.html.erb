@@ -1,0 +1,8 @@
+<h1> Capstone Information </h1>
+
+<% @capstones.each do |capstone|%>
+  <%=capstone.name%>
+  <%=capstone.description%>
+  <%=capstone.url%>
+  <img src='<%=capstone.screenshot%>'/>
+<%end%>
