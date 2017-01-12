@@ -5,19 +5,19 @@
   Last name: <%= student.last_name %>
   Email: <%= student.email %>
   Phone: <%= student.phone_number %>
-  Bio: <%= student.short_bio %>
+  Bio: <%= student.bio %>
   Linkedin: <%= student.linkedin_url %>
   Twitter: <%= student.twitter_handle %>
-  Personal: <%= student.personal_website %>
-  Resume: <%= student.online_resume_url %>
+  Personal: <%= student.personal_url %>
+  Resume: <%= student.resume_url %>
   Github: <%= student.github_url %>
   Photo: <%= student.photo %>
     <% @student.experiences.each do |experience| %>
       <div class="experience" >
-      Start date: <%= experience.start %> 
-      End Date: <%= experience.end %> 
-      Title: <%= experience.title %> 
-      Company: <%= experience.company %> 
+      Start date: <%= experience.start_date %> 
+      End Date: <%= experience.end_date %> 
+      Title: <%= experience.job_title %> 
+      Company: <%= experience.company_name %> 
       Details: <%= experience.details %> 
       </div>
     <% end %>
@@ -41,7 +41,7 @@
     <% @student.capstones.each do |capstone|%>
     Capstone Name: <% capstone.name %>
     Description: <% capstone.description %>
-    URL: <% capstone.url %>
+    URL: <% capstone.URL %>
     Screenshot: <% capstone.screenshot %>
     <% end %>
     </div>
