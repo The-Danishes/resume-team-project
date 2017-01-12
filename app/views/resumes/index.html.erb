@@ -22,12 +22,12 @@
       </div>
     <% end %>
     <div class="education" >
-    <% @student.education.each do |school| %>
-      School Start Date: <% school.start %>
-      School End Date: <% school.end %>
-      Degree: <% school.degree %>
-      University: <% school.university %>
-      Details: <% school.details %>
+    <% @student.educations.each do |education| %>
+      School Start Date: <% education.start_date %>
+      School End Date: <% education.end_date %>
+      Degree: <% education.degree %>
+      University: <% education.university_name %>
+      Details: <% education.details %>
     </div>
     <% end %>
 
