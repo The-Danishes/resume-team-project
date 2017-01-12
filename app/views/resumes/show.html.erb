@@ -1,1 +1,60 @@
 <h1> Individual student</h1>
+  <div class="student">
+  First name: <%= @student.first_name %>
+  Last name: <%= @student.last_name %>
+  Email: <%= @student.email %>
+  Phone: <%= @student.phone %>
+  Bio: <%= @student.bio %>
+  Linkedin: <%= @student.linkedin %>
+  Twitter: <%= @student.twitter %>
+  Personal: <%= @student.personal %>
+  Resume: <%= @student.resume %>
+  Github: <%= @student.github %>
+  Photo: <%= @student.photo %>
+ </div> %>
+
+ <% @student.experiences.each do |experience| %>
+  <div class="experience">
+    Start Date: <%= experience.start %>
+    End Date: <%= experience.end %>
+    Title: <%= experience.title %>
+    Company: <%= experience.company %>
+    Details: <%= experience.details %>
+    </div>
+    <% end %>
+
+    <% @student.education.each do |school| %>
+    <div class="education">
+    Start Date: <%= school.start %>
+    End Date: <%= school.end %>
+    Degree: <%= school.degree %>
+    University: <%= school.university %>
+    Details: <%= school.details %>
+    </div>
+    <% end %>
+
+    <% @student.skills.each do |skill| %>
+    <div class="skills">
+      Skills: <%= skill.skill_name %>
+    </div>
+    <% end %>
+
+    <% @student.capstones.each do |capstone| %>
+    <div class="capstone" >
+    Capstone: <% capstone.name %>
+    Description: <% capstone.description %>
+    URL: <% capstone.url %>
+    Screenshot: <% capstone.screenshot %>
+    </div>
+    <% end %>
+
+
+
+
+
+
+
+
+
+
+

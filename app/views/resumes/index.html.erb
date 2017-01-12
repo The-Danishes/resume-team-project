@@ -39,10 +39,10 @@
 
     <div class="capstone">
     <% @student.capstones.each do |capstone|%>
-    <% capstone.name %>
-    <% capstone.description %>
-    <% capstone.url %>
-    <% capstone.screenshot %>
+    Capstone Name: <% capstone.name %>
+    Description: <% capstone.description %>
+    URL: <% capstone.url %>
+    Screenshot: <% capstone.screenshot %>
     <% end %>
     </div>
 
