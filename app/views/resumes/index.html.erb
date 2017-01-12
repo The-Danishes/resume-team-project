@@ -1,0 +1,37 @@
+<h1> Student Resume </h1>
+<% @students.each do |student|%>
+<div class="student">
+  <%= student.first_name %>
+  <%= student.last_name %>
+  <%= student.email %>
+  <%= student.phone_number %>
+  <%= student.short_bio %>
+  <%= student.linkedin_url %>
+  <%= student.twitter_handle %>
+  <%= student.personal_website %>
+  <%= student.online_resume_url %>
+  <%= student.github_url %>
+  <%= student.photo %>
+    <% @student.experiences.each do |experience| %>
+      <div class="experience" >
+      <%= experience.start %> 
+      <%= experience.end %> 
+      <%= experience.title %> 
+      <%= experience.company %> 
+      <%= experience.details %> 
+      </div>
+    <% end %>
+    <div class="education" >
+    <% @student.education.each do |school| %>
+      <% school.start %>
+      <% school.end %>
+      <% school.degree %>
+      <% school.university %>
+      <% school.details %>
+    </div>
+    <% end %>
+
+
+
+  </div>
+<%end%>
