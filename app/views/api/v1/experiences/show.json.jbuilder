@@ -1,1 +1,1 @@
-show.json.jbuilder
+json.partial! 'experience.json.jbuilder', experience: experience

@@ -1,1 +1,1 @@
-show.json.jbuilder
+json.partial! 'capstone.json.jbuilder', capstone: capstone

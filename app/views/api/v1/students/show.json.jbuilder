@@ -1,1 +1,1 @@
-show.json.jbuilder
+json.partial! 'student.json.jbuilder', student: student

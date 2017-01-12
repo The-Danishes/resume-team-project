@@ -1,1 +1,1 @@
-show.json.jbuilder
+json.partial! 'skill.json.jbuilder', skill: skill
