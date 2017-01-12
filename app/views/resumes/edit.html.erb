@@ -1,0 +1,143 @@
+<h1>Editing Student: <%= @student.first_name %></h1><% student>last_name%>
+
+<%= form_tag "/resumes/#{@resumes.id}", method: :patch do %>
+  
+<h1> STUDENT PROFILE </h1>
+  <div>
+    <%= label_tag :first_name, @student.first_name %>
+    <%= text_field_tag :first_name, @student.first_name %>
+  </div>
+
+  <div>
+    <%= label_tag :last_name %>
+    <%= text_field_tag :last_name, @student.last_name %>
+  </div>
+
+  <div>
+    <%= label_tag :email %>
+    <%= text_field_tag :email , @student.email %>
+  </div>
+
+  <div>
+    <%= label_tag :phone_number %>
+    <%= text_field_tag :phone_number, @student.phone_number %>
+  </div>
+
+  <div>
+    <%= label_tag :bio %>
+    <%= text_field_tag :bio, @student.bio %>
+  </div>
+
+  <div>
+    <%= label_tag :linkedin_url %>
+    <%= text_field_tag :linkedin_url, @student.linkedin_url %>
+  </div>
+
+  <div>
+    <%= label_tag :twitter_handle %>
+    <%= text_field_tag :twitter_handle, @student.twitter_handle %>
+  </div>
+
+  <div>
+    <%= label_tag :personal_handle %>
+    <%= text_field_tag :personal_handle, @student.personal_handle %>
+  </div>
+
+  <div>
+    <%= label_tag :resume_url %>
+    <%= text_field_tag :resume_url, @student.resume_url %>
+  </div>
+
+  <div>
+    <%= label_tag :github_url %>
+    <%= text_field_tag :github_url, @student.github_url %>
+  </div>
+
+  <div>
+    <%= label_tag :photo %>
+    <%= text_field_tag :photo , @student.photo %>
+  </div>
+<h1> EXPERIENCE </h1>
+  <div>
+    <%= label_tag :start_date %>
+    <%= text_field_tag :start_date, @student.experience.start_date %>
+  </div>
+
+  <div>
+    <%= label_tag :end_date %>
+    <%= text_field_tag :end_date, @student.experience.end_date %>
+  </div>
+
+  <div>
+    <%= label_tag :job_title %>
+    <%= text_field_tag :job_title, @student.experience.job_title %>
+  </div>
+
+  <div>
+    <%= label_tag :company_name %>
+    <%= text_field_tag :company_name, @student.experience.company_name %>
+  </div>
+
+  <div>
+    <%= label_tag :details %>
+    <%= text_field_tag :details, @student.experience.details %>
+  </div>
+<h1> EDUCATION </h1>
+  <div>
+    <%= label_tag :start_date %>
+    <%= text_field_tag :start_date, @student.education.start_date %>
+  </div>
+
+  <div>
+    <%= label_tag :end_date %>
+    <%= text_field_tag :end_date, @student.education.end_date %>
+  </div>
+
+  <div>
+    <%= label_tag :degree %>
+    <%= text_field_tag :degree, @student.education.degree %>
+  </div>
+
+  <div>
+    <%= label_tag :university_name %>
+    <%= text_field_tag :university_name, @student.education.university_name %>
+  </div>
+
+  <div>
+    <%= label_tag :details %>
+    <%= text_field_tag :details, @student.education.details %>
+  </div>
+
+<h1>SKILLS</h1>
+
+  <div>
+    <%= label_tag :skill %>
+    <%= text_field_tag :, @student.skill.skill_name %>
+  </div>
+
+<h1>CAPSTONE</h1>
+  
+  <div>
+    <%= label_tag :name %>
+    <%= text_field_tag :, @student.capstone.name %>
+  </div>
+
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :, @student.capstone.description %>
+  </div>
+
+  <div>
+    <%= label_tag :URL %>
+    <%= text_field_tag :URL, @student.capstone.URL %>
+  </div>
+
+  <div>
+    <%= label_tag :screenshot %>
+    <%= text_field_tag :screenshot, @student.capstone.screenshot %>
+  </div>
+
+  <div>
+    <%= submit_tag "Save!" %>
+  </div>
+<% end %>
