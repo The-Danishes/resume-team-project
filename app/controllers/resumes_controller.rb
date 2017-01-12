@@ -8,6 +8,8 @@ class ResumesController < ApplicationController
 
     @resume = @resumes.student.params[:id]
 
+    @resume = {}
+
     Prawn::Document.generate("#{@resume.first_name}_resume.pdf") do
       text "#{@resume.first_name} #{@resume.last_name}"
       text "Contact Info:"
