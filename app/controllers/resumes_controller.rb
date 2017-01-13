@@ -7,7 +7,7 @@ class ResumesController < ApplicationController
     @students = Unirest.get
   end
 
-   def create
+  def create
     input_first_name = params[:first_name]
     input_last_name = params[:last_name]
     input_email = params[:email]
@@ -43,8 +43,27 @@ class ResumesController < ApplicationController
   end
 
   def update
+    student = Unirest.get("#{ENV['API_URL']}/students")
+    student =Unirest.post("#{ENV['API_URL']}/students/",
+              parameters: 
+              {first_name: input_first_name, 
+              last_name: input_last_name,
+              email: input_email,
+              phone_number: input_phone_number,
+              bio: input_bio,
+              linkedin_url: input_linkedin_url,
+              twitter_handle: input_twitter_handle,
+              personal_url: input_personal_url,
+              resume_url: input_resume_url,
+              github_url: input_github_url,
+              photo: input_photo 
+              },
+              headers: {"Accept" => "application/json"}).body
+    if student.save
+      flash[:success] = "student has been updated"
+      redirect_to "/"
   end
-  
+
   def destroy
   end
   
