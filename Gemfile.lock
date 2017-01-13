@@ -43,6 +43,7 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (7.1.4)
+    bcrypt (3.1.11)
     awesome_print (1.7.0)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -180,6 +181,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   annotate
   awesome_print
   better_errors
