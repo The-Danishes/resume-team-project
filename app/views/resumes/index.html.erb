@@ -1,3 +1,4 @@
+
 <h1> Student Resume </h1>
 <% @students.each do |student|%>
 <div class="student">
@@ -12,6 +13,7 @@
   Resume: <%= student.resume_url %>
   Github: <%= student.github_url %>
   Photo: <%= student.photo %>
+    
     <% @student.experiences.each do |experience| %>
       <div class="experience" >
       Start date: <%= experience.start_date %> 
