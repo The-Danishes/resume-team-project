@@ -1,1 +1,1 @@
-json.partial! 'skill.json.jbuilder', skill: skill
+json.partial! 'skill.json.jbuilder', skill: @skill
