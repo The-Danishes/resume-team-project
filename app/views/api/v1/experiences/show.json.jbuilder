@@ -1,1 +1,1 @@
-json.partial! 'experience.json.jbuilder', experience: experience
+json.partial! 'experience.json.jbuilder', experience: @experience

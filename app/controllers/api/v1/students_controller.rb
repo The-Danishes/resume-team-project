@@ -30,4 +30,8 @@ class Api::V1::StudentsController < ApplicationController
     redirect_to :index
   end
 
+  def resume
+    @student = Student.find_by(id: params[:id])
+  end
+
 end
