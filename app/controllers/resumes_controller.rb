@@ -10,7 +10,12 @@ class ResumesController < ApplicationController
     end
 
     @student = Unirest.get("localhost:3000/api/v1/students/#{params[:id]}").body
+
     @tweet = client.user_timeline(@student["twitter_handle"]).first.text
+
+
+    @education = Unirest.get("localhost:3000/api/v1/educations/#{params[:id]}").body
+
   end
 
   def index 
