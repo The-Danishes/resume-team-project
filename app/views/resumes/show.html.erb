@@ -37,13 +37,19 @@
     
         <div id="contact-info" class="vcard">
         
-            <!-- Microformats! -->
+          
         
             <h1><%= @student["first_name"]%> <%= @student["last_name"]%></h1>
         
             <p>
+
                 Cell: <span class="tel"><%= @student["phone_number"]%></span><br />
                 Email: <a class="email" href="mailto:greatoldone@lovecraft.com"><%= @student["email"]%></a>
+
+                Cell: <span class="tel">555-666-7777</span><br />
+                Email: <a class="email" href="mailto:greatoldone@lovecraft.com">greatoldone@lovecraft.com</a></br>
+                Twitter: <%= @student["linkedin_url"]%>
+
             </p>
         </div>
                 
@@ -109,7 +115,8 @@
         </dl>
         
         <div class="clear"></div>
-     
+        
+        
     </div>
 
 </body>
