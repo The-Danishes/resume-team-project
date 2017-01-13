@@ -20,12 +20,14 @@ student_list=[]
     last_name: Faker::StarWars.droid,
     email: Faker::Internet.email,
     phone_number: Faker::PhoneNumber.phone_number,
-    bio: Faker::Hipster.paragraph
+    bio: Faker::Hipster.paragraph,
+    linkedin_url: Faker::Internet.url('linkedin.com'),
+    twitter_handle: Faker::Pokemon.name,
+    personal_url: Faker::Internet.url('itsmeee.com'),
+    resume_url: Faker::Internet.url('resume.com'), 
+    github_url: Faker::Internet.url('github.com'),
+    photo: Faker::Avatar.image
   })
-end
-
-student_list.each do |student|
-  Student.create({first_name: student[:first_name],last_name: student[:last_name],email: student[:email],phone_number: student[:phone_number],bio: student[:bio]})
 end
 
 skill_list=[]
@@ -50,6 +52,24 @@ capstone_list=[]
 end
 
 Student.ids.each do |student_id|
+  Experience.create({
+    start_date: Faker::Date.backward(360) ,
+    end_date: Faker::Date.backward(360) ,
+    job_title: Faker::GameOfThrones.character,
+    company_name: Faker::GameOfThrones.house,
+    details: Faker::Hipster.paragraph,
+    student_id: student_id
+  })
+  Education.create({
+    start_date: Faker::Date.backward(360) ,
+    end_date: Faker::Date.backward(360) ,
+    degree: Faker::Superhero.power,
+    university_name: Faker::University.name,
+    details: Faker::Hipster.paragraph,
+    student_id: student_id
+  })
+
+  # Add Capstones & Skills to Students
   capstone = capstone_list.sample
   Capstone.create({name: capstone[:name], description: capstone[:description], URL: capstone[:URL], screenshot: capstone[:screenshot], student_id: student_id})
   5.times do 
