@@ -30,6 +30,22 @@ student_list=[]
   })
 end
 
+student_list.each do |student|
+  Student.create({
+    first_name: student[:first_name],
+    last_name: student[:last_name],
+    email: student[:email],
+    phone_number: student[:phone_number],
+    bio: student[:bio],
+    linkedin_url: student[:linkedin_url],
+    twitter_handle: student[:twitter_handle],
+    personal_url: student[:personal_url],
+    resume_url: student[:resume_url],
+    github_url: student[:github_url],
+    photo: student[:photo],
+  })
+end
+
 skill_list=[]
 100.times do
   skill_list.push({
@@ -68,13 +84,13 @@ Student.ids.each do |student_id|
       university_name: Faker::University.name,
       details: Faker::Hipster.paragraph,
       student_id: student_id
-    })
-
-    # Add Capstones & Skills to Students
-    capstone = capstone_list.sample
-    Capstone.create({name: capstone[:name], description: capstone[:description], URL: capstone[:URL], screenshot: capstone[:screenshot], student_id: student_id})
-    5.times do 
-      PeopleSkill.create({student_id: student_id, skill_id: Skill.ids.sample})
-    end  
+    }) 
   end
+
+  # Add Capstones & Skills to Students
+  capstone = capstone_list.sample
+  Capstone.create({name: capstone[:name], description: capstone[:description], URL: capstone[:URL], screenshot: capstone[:screenshot], student_id: student_id})
+  5.times do 
+    PeopleSkill.create({student_id: student_id, skill_id: Skill.ids.sample})
+  end 
 end
