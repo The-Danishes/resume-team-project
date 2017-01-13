@@ -1,0 +1,1 @@
+json.partial! 'resume.json.jbuilder', student: @student

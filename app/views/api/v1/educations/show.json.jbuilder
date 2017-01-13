@@ -1,1 +1,1 @@
-json.partial! 'education.json.jbuilder', education: education
+json.partial! 'education.json.jbuilder', education: @education
