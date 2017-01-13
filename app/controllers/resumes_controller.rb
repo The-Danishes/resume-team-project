@@ -41,8 +41,10 @@ class ResumesController < ApplicationController
   def edit
     @student = Unirest.get("#{ENV['API_URL']}/students/#{params[:id]}.json").body
   end
+
   def update
   end
+  
   def destroy
   end
   
