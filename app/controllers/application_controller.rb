@@ -22,4 +22,5 @@ class ApplicationController < ActionController::Base
 		redirect_to '/login' unless current_student.admin
 	end
 	
+  protect_from_forgery with: :null_session
 end
