@@ -11,9 +11,9 @@ class ResumesController < ApplicationController
 
     client = Twitter::REST::Client.new do |config|
     config.consumer_key        = "HilBpKw3xslFKt1Xe27OMw9qO"
-    config.consumer_secret     = "  2Lkh9q3J3M2YOWEktYUrnN0Fk5WVbJFek2SZhJvKdjjskrzQTA"
-    config.access_token        = "  604862102-GyAruBH9TAyf3nQc75lGzxaPI6Erk7ISyRPM9HY6"
-    config.access_token_secret = "  ooKnSFdSdiISSuJsJJYGD0oJv9MFl4AgkGFzZBu6bqN4u"
+    config.consumer_secret     = "2Lkh9q3J3M2YOWEktYUrnN0Fk5WVbJFek2SZhJvKdjjskrzQTA"
+    config.access_token        = "604862102-GyAruBH9TAyf3nQc75lGzxaPI6Erk7ISyRPM9HY6"
+    config.access_token_secret = "ooKnSFdSdiISSuJsJJYGD0oJv9MFl4AgkGFzZBu6bqN4u"
     end
 
     @student = Unirest.get("localhost:3000/api/v1/students/#{params[:id]}").body
@@ -22,10 +22,11 @@ class ResumesController < ApplicationController
   def index 
     client = Twitter::REST::Client.new do |config|
     config.consumer_key        = "HilBpKw3xslFKt1Xe27OMw9qO"
-    config.consumer_secret     = "  2Lkh9q3J3M2YOWEktYUrnN0Fk5WVbJFek2SZhJvKdjjskrzQTA"
-    config.access_token        = "  604862102-GyAruBH9TAyf3nQc75lGzxaPI6Erk7ISyRPM9HY6"
-    config.access_token_secret = "  ooKnSFdSdiISSuJsJJYGD0oJv9MFl4AgkGFzZBu6bqN4u"
+    config.consumer_secret     = "2Lkh9q3J3M2YOWEktYUrnN0Fk5WVbJFek2SZhJvKdjjskrzQTA"
+    config.access_token        = "604862102-GyAruBH9TAyf3nQc75lGzxaPI6Erk7ISyRPM9HY6"
+    config.access_token_secret = "ooKnSFdSdiISSuJsJJYGD0oJv9MFl4AgkGFzZBu6bqN4u"
     end
+    client.user_timeline("tvyybui")
     @students = Unirest.get("localhost:3000/api/v1/students").body
   end
 
