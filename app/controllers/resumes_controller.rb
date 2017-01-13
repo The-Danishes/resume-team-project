@@ -7,7 +7,7 @@ class ResumesController < ApplicationController
     @students = Unirest.get
   end
 
-   def create
+  def create
     input_first_name = params[:first_name]
     input_last_name = params[:last_name]
     input_email = params[:email]
@@ -46,7 +46,12 @@ class ResumesController < ApplicationController
   end
   
   def destroy
+    @student = Student.find_by(id: params[:id])
+    @student.destroy
+
+    redirect_to "/resumes/#{student.id}"
   end
+
   
   def pdf_renderer
     @resumes = Unirest.get("BLAH").body
