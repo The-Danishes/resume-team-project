@@ -1,7 +1,7 @@
 class CapstonesClientsController < ApplicationController
 
  def index
-  unirest_capstones = Unirest.get("", headers: {"Authorization" => "#{ENV['API_KEY']}", "X-User-Email" => "#{ENV['API_USER_EMAIL']}"}).body
+  unirest_capstones = Unirest.get("/api/v1/capstones.json").body
     capstones = []
     unirest_capstones.each do |unirest_capstone|
       capstone = Capstone.new(unirest_capstone)
@@ -11,5 +11,7 @@ class CapstonesClientsController < ApplicationController
  end
 
  def show
-    @capstone = Capstone.find_by(id: params[:id])
+  unirest_capstones = Unirest.get("/api/v1/capstones/#{id}.json").body
+  
+end
 end

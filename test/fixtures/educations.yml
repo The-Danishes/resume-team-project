@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2017-01-11 18:39:20
+  end_date: 2017-01-11 18:39:20
+  job_title: MyString
+  company_name: MyString
+  details: MyText
+
+two:
+  start_date: 2017-01-11 18:39:20
+  end_date: 2017-01-11 18:39:20
+  job_title: MyString
+  company_name: MyString
+  details: MyText

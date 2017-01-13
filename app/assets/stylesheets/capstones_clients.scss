@@ -1,3 +1,44 @@
 // Place all the styles related to the CapstonesClients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.index-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+
+.index-image img {
+    width:100%;
+    vertical-align:top;
+}
+.index-image:after, .index-image:before {
+    position:absolute;
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.index-image:after {
+    content:'\A';
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+}
+.index-image:before {
+    content: attr(data-content);
+    width:100%;
+    color:#fff;
+    z-index:1;
+    bottom:0;
+    padding:4px 10px;
+    text-align:center;
+    background:black;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+.index-image:hover:after, .index-image:hover:before {
+    opacity:1;
+}
