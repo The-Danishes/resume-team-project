@@ -1,0 +1,38 @@
+<h1>new student:</h1>
+
+<%= form_tag "/resumes", method: :post do %>
+  <%= label_tag :first_name %>
+  <%= text_field_tag :first_name %>
+
+  <%= label_tag :last_name %>
+  <%= text_field_tag :last_name %>
+
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+
+  <%= label_tag :phone_number %>
+  <%= text_field_tag :phone_number %>
+
+  <%= label_tag :bio %>
+  <%= text_field_tag :bio %>
+
+  <%= label_tag :linkedin_url %>
+  <%= text_field_tag :linkedin_url %>
+
+  <%= label_tag :twitter_handle %>
+  <%= text_field_tag :twitter_handle %>
+
+  <%= label_tag :personal_url %>
+  <%= text_field_tag :personal_url %>
+
+  <%= label_tag :resume_url %>
+  <%= text_field_tag :resume_url %>
+
+  <%= label_tag :github_url %>
+  <%= text_field_tag :github_url %>
+
+  <%= label_tag :photo %>
+  <%= text_field_tag :photo %>
+
+  <%= submit_tag "Add Student " %>
+  <% end %>
