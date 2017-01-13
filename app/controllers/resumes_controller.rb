@@ -12,6 +12,12 @@ class ResumesController < ApplicationController
     @student = Unirest.get("localhost:3000/api/v1/students/#{params[:id]}/resume").body
 
    
+
+    @tweet = client.user_timeline(@student["twitter_handle"]).first.text
+
+
+    @education = Unirest.get("localhost:3000/api/v1/educations/#{params[:id]}").body
+
   end
 
   def index 
@@ -21,6 +27,7 @@ class ResumesController < ApplicationController
     config.access_token        = "604862102-GyAruBH9TAyf3nQc75lGzxaPI6Erk7ISyRPM9HY6"
     config.access_token_secret = "ooKnSFdSdiISSuJsJJYGD0oJv9MFl4AgkGFzZBu6bqN4u"
     end
+   
    
     @students = Unirest.get("localhost:3000/api/v1/students").body
   end
