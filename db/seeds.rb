@@ -67,51 +67,51 @@ student_list.each do |student|
   })
 end
 
-# skill_list=[]
-# 100.times do
-#   skill_list.push({
-#     skill_name: Faker::Music.instrument
-#   })
-# end
+skill_list=[]
+100.times do
+  skill_list.push({
+    skill_name: Faker::Music.instrument
+  })
+end
 
-# skill_list.each do |student|
-#   Skill.create({skill_name: student[:skill_name]})
-# end
+skill_list.each do |student|
+  Skill.create({skill_name: student[:skill_name]})
+end
 
-# capstone_list=[]
-# 100.times do
-#   capstone_list.push({
-#     name: Faker::App.name,
-#     description: Faker::Hacker.say_something_smart,
-#     URL: Faker::Internet.url,
-#     screenshot: Faker::Company.logo
-#   })
-# end
+capstone_list=[]
+100.times do
+  capstone_list.push({
+    name: Faker::App.name,
+    description: Faker::Hacker.say_something_smart,
+    URL: Faker::Internet.url,
+    screenshot: Faker::Company.logo
+  })
+end
 
-# Student.ids.each do |student_id|
-#   4.times do 
-#     Experience.create({
-#       start_date: Faker::Date.backward(360) ,
-#       end_date: Faker::Date.backward(360) ,
-#       job_title: Faker::GameOfThrones.character,
-#       company_name: Faker::GameOfThrones.house,
-#       details: Faker::Hipster.paragraph,
-#       student_id: student_id
-#     })
-#     Education.create({
-#       start_date: Faker::Date.backward(360) ,
-#       end_date: Faker::Date.backward(360) ,
-#       degree: Faker::Superhero.power,
-#       university_name: Faker::University.name,
-#       details: Faker::Hipster.paragraph,
-#       student_id: student_id
-#     }) 
-#   end
+Student.ids.each do |student_id|
+  4.times do 
+    Experience.create({
+      start_date: Faker::Date.backward(360) ,
+      end_date: Faker::Date.backward(360) ,
+      job_title: Faker::GameOfThrones.character,
+      company_name: Faker::GameOfThrones.house,
+      details: Faker::Hipster.paragraph,
+      student_id: student_id
+    })
+    Education.create({
+      start_date: Faker::Date.backward(360) ,
+      end_date: Faker::Date.backward(360) ,
+      degree: Faker::Superhero.power,
+      university_name: Faker::University.name,
+      details: Faker::Hipster.paragraph,
+      student_id: student_id
+    }) 
+  end
 
-#   # Add Capstones & Skills to Students
-#   capstone = capstone_list.sample
-#   Capstone.create({name: capstone[:name], description: capstone[:description], URL: capstone[:URL], screenshot: capstone[:screenshot], student_id: student_id})
-#   5.times do 
-#     PeopleSkill.create({student_id: student_id, skill_id: Skill.ids.sample})
-#   end 
-# end
+  # Add Capstones & Skills to Students
+  capstone = capstone_list.sample
+  Capstone.create({name: capstone[:name], description: capstone[:description], URL: capstone[:URL], screenshot: capstone[:screenshot], student_id: student_id})
+  5.times do 
+    PeopleSkill.create({student_id: student_id, skill_id: Skill.ids.sample})
+  end 
+end
