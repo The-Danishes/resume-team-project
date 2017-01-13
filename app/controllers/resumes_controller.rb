@@ -6,6 +6,7 @@ class ResumesController < ApplicationController
   end
 
   def show
+
     @student = Unirest.get("localhost:3000/api/v1/students").body
 
     client = Twitter::REST::Client.new do |config|
@@ -14,6 +15,8 @@ class ResumesController < ApplicationController
     config.access_token        = "  604862102-GyAruBH9TAyf3nQc75lGzxaPI6Erk7ISyRPM9HY6"
     config.access_token_secret = "  ooKnSFdSdiISSuJsJJYGD0oJv9MFl4AgkGFzZBu6bqN4u"
     end
+
+    @student = Unirest.get("localhost:3000/api/v1/students/#{params[:id]}").body
   end
 
   def index 
@@ -81,7 +84,12 @@ class ResumesController < ApplicationController
   end
 
   def destroy
+    @student = Student.find_by(id: params[:id])
+    @student.destroy
+
+    redirect_to "/resumes/#{student.id}"
   end
+
   
   def pdf_renderer
     @resumes = Unirest.get("BLAH").body

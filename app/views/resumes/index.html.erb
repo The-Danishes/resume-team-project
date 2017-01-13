@@ -2,16 +2,29 @@
 <h1> Student Resume </h1>
 <% @students.each do |student|%>
 <div class="student">
+  <div>
   First name: <%= student["first_name"] %>
+  </div>
   Last name: <%= student["last_name"] %>
+  <div>
   Email: <%= student["email"] %>
+  </div>
   Phone: <%= student["phone_number"] %>
+  <div>
   Bio: <%= student["bio"] %>
+  </div>
   Linkedin: <%= student["linkedin_url"] %>
+  <div>
   Twitter: <%= student["twitter_handle"] %>
+  </div>
   Personal: <%= student["personal_url"] %>
+  <div>
   Resume: <%= student["resume_url"] %>
+  </div>
   Github: <%= student["github_url"] %>
+  <div>
   Photo: <%= student["photo"] %>
+  </div>
+  <br>
   </div>
 <%end%>
