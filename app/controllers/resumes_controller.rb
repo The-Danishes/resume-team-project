@@ -1,10 +1,11 @@
 class ResumesController < ApplicationController
 
   def show
-    @student = Unirest.get
+    @student = Unirest.get("localhost:3000/api/v1/students").body
   end
+
   def index 
-    @students = Unirest.get
+    @students = Unirest.get("localhost:3000/api/v1/students").body
   end
 
   def create
@@ -20,7 +21,7 @@ class ResumesController < ApplicationController
     input_github_url = params[:github_url]
     input_photo = params[:photo]
     
-    @student = Unirest.post("#{ENV['API_URL']}/students", 
+    @student = Unirest.post("/api/v1/students/", 
                 parameters: 
                 {first_name: input_first_name, 
                 last_name: input_last_name,
@@ -39,12 +40,28 @@ class ResumesController < ApplicationController
   end
 
   def edit
-    @student = Unirest.get("#{ENV['API_URL']}/students/#{params[:id]}.json").body
+    @student = Unirest.get("/api/v1/students.json").body
   end
 
   def update
-  end
+    student = Unirest.post("/api/v1/students/:id",
+              parameters: 
+              {first_name: input_first_name, 
+              last_name: input_last_name,
+              email: input_email,
+              phone_number: input_phone_number,
+              bio: input_bio,
+              linkedin_url: input_linkedin_url,
+              twitter_handle: input_twitter_handle,
+              personal_url: input_personal_url,
+              resume_url: input_resume_url,
+              github_url: input_github_url,
+              photo: input_photo 
+              },
+              headers: {"Accept" => "application/json"}).body
   
+  end
+
   def destroy
     @student = Student.find_by(id: params[:id])
     @student.destroy
