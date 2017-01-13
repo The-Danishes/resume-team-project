@@ -1,0 +1,2 @@
+class Captsone < ApplicationRecord
+end
