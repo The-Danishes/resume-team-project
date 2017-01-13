@@ -1,13 +1,6 @@
 class ResumesController < ApplicationController
 
-  def twittercreate
-    @test = Test.new(params[:test])
-    Twitter.update(@test.tweet)
-  end
-
   def show
-
-    @student = Unirest.get("localhost:3000/api/v1/students").body
 
     client = Twitter::REST::Client.new do |config|
     config.consumer_key        = "HilBpKw3xslFKt1Xe27OMw9qO"
@@ -26,7 +19,7 @@ class ResumesController < ApplicationController
     config.access_token        = "604862102-GyAruBH9TAyf3nQc75lGzxaPI6Erk7ISyRPM9HY6"
     config.access_token_secret = "ooKnSFdSdiISSuJsJJYGD0oJv9MFl4AgkGFzZBu6bqN4u"
     end
-    client.user_timeline("tvyybui")
+   
     @students = Unirest.get("localhost:3000/api/v1/students").body
   end
 
