@@ -32,6 +32,23 @@ student_list=[]
   })
 end
 
+# Add DEFAULT USER
+Student.create({  
+  first_name: Faker::StarWars.character,
+  last_name: Faker::StarWars.droid,
+  email: "student@actualize.com",
+  phone_number: Faker::PhoneNumber.phone_number,
+  bio: Faker::Hipster.paragraph,
+  linkedin_url: Faker::Internet.url('linkedin.com'),
+  twitter_handle: Faker::Pokemon.name,
+  personal_url: Faker::Internet.url('itsmeee.com'),
+  resume_url: Faker::Internet.url('resume.com'), 
+  github_url: Faker::Internet.url('github.com'),
+  photo: Faker::Avatar.image,
+  password: DEFAULT_PASSWORD,
+  password_confirmation: DEFAULT_PASSWORD
+})
+
 student_list.each do |student|
   Student.create({
     first_name: student[:first_name],
