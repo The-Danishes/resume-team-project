@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <h1> Capstone Information </h1>
+<% counter = 0 %>
+  <div class="row">
+    <% @capstones.each do |capstone| %>
+      <% if counter % 3 == 0 %>
+        </div>
+      <% end %>
+
+      <% if counter % 3 == 0 %>
+        <div class="row">
+      <% end %>
+  <div class="col-md-4">
+<% @capstones.each do |capstone|%>
+  <a href="/recipes/<%=capstone.url%>">
+    <div class="index-image" data-content="<%=capstone.name%>">
+      <img class="index-image" alt="Rails" src="<%=capstone.screenshot%>">
+    </div>
+  </a>
+<%end%>
+</div>
+
+    <% counter += 1 %>
+    <%end%>
+  </div>
+</div>
