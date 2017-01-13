@@ -4,11 +4,8 @@ Rails.application.routes.draw do
   # API ROUTES
   namespace :api do
     namespace :v1 do 
-      resources :students
-      resources :experiences
-      resources :educations
-      resources :skills
-      resources :capstones
+      resources :students, :experiences, :educations, :skills, :capstones
+      get '/students/:id/resume', to: 'students#resume'
     end
   end
 
