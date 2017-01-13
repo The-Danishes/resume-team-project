@@ -1,7 +1,7 @@
 class ResumesController < ApplicationController
 
   def show
-    @student = Unirest.get("localhost:3000/api/v1/students").body
+    @student = Unirest.get("localhost:3000/api/v1/students/#{params[:id]}").body
   end
 
   def index 
