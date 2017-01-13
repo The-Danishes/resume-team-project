@@ -44,11 +44,9 @@
             <p>
 
                 Cell: <span class="tel"><%= @student["phone_number"]%></span><br />
-                Email: <a class="email" href="mailto:greatoldone@lovecraft.com"><%= @student["email"]%></a>
-
-                Cell: <span class="tel">555-666-7777</span><br />
-                Email: <a class="email" href="mailto:greatoldone@lovecraft.com">greatoldone@lovecraft.com</a></br>
+                Email: <a class="email" href="mailto:greatoldone@lovecraft.com"><%= @student["email"]%></a><br>
                 Twitter: <%= @student["linkedin_url"]%>
+                
 
             </p>
         </div>
@@ -66,7 +64,7 @@
             
             <dt>Education</dt>
             <dd>
-                <h2><%= @education["university_name"]></h2>
+                <h2><%= @student["education"].first["university_name"] %></h2>
                 <p><strong>Major:</strong> Public Relations<br />
                    <strong>Minor:</strong> Scale Tending</p>
             </dd>

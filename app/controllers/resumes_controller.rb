@@ -9,9 +9,9 @@ class ResumesController < ApplicationController
     config.access_token_secret = "ooKnSFdSdiISSuJsJJYGD0oJv9MFl4AgkGFzZBu6bqN4u"
     end
 
-    @student = Unirest.get("localhost:3000/api/v1/students/#{params[:id]}").body
+    @student = Unirest.get("localhost:3000/api/v1/students/#{params[:id]}/resume").body
 
-    @education = Unirest.get("localhost:3000/api/v1/educations/#{params[:id]}").body
+   
   end
 
   def index 
