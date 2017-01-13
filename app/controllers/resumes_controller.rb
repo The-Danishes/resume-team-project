@@ -1,10 +1,11 @@
 class ResumesController < ApplicationController
 
   def show
-    @student = Unirest.get
+    @student = Unirest.get("localhost:3000/api/v1/students").body
   end
+
   def index 
-    @students = Unirest.get
+    @students = Unirest.get("localhost:3000/api/v1/students").body
   end
 
   def create
@@ -20,7 +21,7 @@ class ResumesController < ApplicationController
     input_github_url = params[:github_url]
     input_photo = params[:photo]
     
-    @student = Unirest.post("#{ENV['API_URL']}/students", 
+    @student = Unirest.post("/api/v1/students/", 
                 parameters: 
                 {first_name: input_first_name, 
                 last_name: input_last_name,
@@ -39,12 +40,11 @@ class ResumesController < ApplicationController
   end
 
   def edit
-    @student = Unirest.get("#{ENV['API_URL']}/students/#{params[:id]}.json").body
+    @student = Unirest.get("/api/v1/students.json").body
   end
 
   def update
-    student = Unirest.get("#{ENV['API_URL']}/students")
-    student =Unirest.post("#{ENV['API_URL']}/students/",
+    student = Unirest.post("/api/v1/students/:id",
               parameters: 
               {first_name: input_first_name, 
               last_name: input_last_name,
@@ -59,9 +59,7 @@ class ResumesController < ApplicationController
               photo: input_photo 
               },
               headers: {"Accept" => "application/json"}).body
-    if student.save
-      flash[:success] = "student has been updated"
-      redirect_to "/"
+  
   end
 
   def destroy

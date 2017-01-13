@@ -2,53 +2,16 @@
 <h1> Student Resume </h1>
 <% @students.each do |student|%>
 <div class="student">
-  First name: <%= link_to student.first_name, "/students/#{student.first_name}" %>
-  Last name: <%= student.last_name %>
-  Email: <%= student.email %>
-  Phone: <%= student.phone_number %>
-  Bio: <%= student.bio %>
-  Linkedin: <%= student.linkedin_url %>
-  Twitter: <%= student.twitter_handle %>
-  Personal: <%= student.personal_url %>
-  Resume: <%= student.resume_url %>
-  Github: <%= student.github_url %>
-  Photo: <%= student.photo %>
-    
-    <% @student.experiences.each do |experience| %>
-      <div class="experience" >
-      Start date: <%= experience.start_date %> 
-      End Date: <%= experience.end_date %> 
-      Title: <%= experience.job_title %> 
-      Company: <%= experience.company_name %> 
-      Details: <%= experience.details %> 
-      </div>
-    <% end %>
-    <div class="education" >
-    <% @student.educations.each do |education| %>
-      School Start Date: <% education.start_date %>
-      School End Date: <% education.end_date %>
-      Degree: <% education.degree %>
-      University: <% education.university_name %>
-      Details: <% education.details %>
-    </div>
-    <% end %>
-
-    <div class="skills" >
-    <% @student.skills.each do |skill|%>
-    Skill Name <% skill.skill_name %>
-    <% end %>
-    </div>
-
-    <div class="capstone">
-    <% @student.capstones.each do |capstone|%>
-    Capstone Name: <% capstone.name %>
-    Description: <% capstone.description %>
-    URL: <% capstone.URL %>
-    Screenshot: <% capstone.screenshot %>
-    <% end %>
-    </div>
-
-
-
+  First name: <%= student["first_name"] %>
+  Last name: <%= student["last_name"] %>
+  Email: <%= student["email"] %>
+  Phone: <%= student["phone_number"] %>
+  Bio: <%= student["bio"] %>
+  Linkedin: <%= student["linkedin_url"] %>
+  Twitter: <%= student["twitter_handle"] %>
+  Personal: <%= student["personal_url"] %>
+  Resume: <%= student["resume_url"] %>
+  Github: <%= student["github_url"] %>
+  Photo: <%= student["photo"] %>
   </div>
 <%end%>
